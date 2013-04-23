@@ -6,5 +6,6 @@
 *.csproj
 *.unityproj
 *.sln
-Assets/*.meta
-Assets/*.*.meta
+*.meta
+*.*.meta
+Assembly-CSharp.pidb
