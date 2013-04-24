@@ -20,7 +20,8 @@ public class Gun : MonoBehaviour {
 		GameObject[] bullets = GameObject.FindGameObjectsWithTag("Bullet");
 		foreach(GameObject bullet in bullets)
 		{
-			bullet.transform.Translate(new Vector3(0,.1f,0));//move along y-axis since gun barrel and bullets is rotated 90 degrees around Z-axis
+			bullet.transform.Translate(new Vector3(0,0,.1f));
 		}		
+		this.transform.Translate(new Vector3(Input.GetAxis ("Mouse X"), Input.GetAxis ("Mouse Y"), 0));
 	}
 }
