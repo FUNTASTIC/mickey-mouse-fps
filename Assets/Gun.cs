@@ -26,6 +26,8 @@ public class Gun : MonoBehaviour {
 			Vector3 position = new Vector3(x,y,z);
 			Quaternion rotation = new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w);
 			Instantiate (Resources.Load ("Bullet"), position, rotation);
+			//Play sound when firing
+			Instantiate (Resources.Load ("Firing_Sound"), position, rotation);
 		}	
 		//set up crosshair
 		crosshair.transform.position = new Vector3(x,y,z);
