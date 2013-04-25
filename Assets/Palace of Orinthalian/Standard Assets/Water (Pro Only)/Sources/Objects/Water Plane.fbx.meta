@@ -40,7 +40,7 @@ ModelImporter:
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
-    secondaryUVPackMargin: 4
+    secondaryUVPackMargin: .00390625
   tangentSpace:
     normalSmoothAngle: 60
     splitTangentsAcrossUV: 0
