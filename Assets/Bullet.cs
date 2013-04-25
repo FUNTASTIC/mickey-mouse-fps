@@ -15,10 +15,13 @@ public class Bullet : MonoBehaviour {
 	
 	void OnTriggerEnter (Collider other)
     {
-		if(other.name != "First Person Controller" && other.name != "Crosshair" && other.tag != "Bullet")
+		if(other.name != "Mickey" &&
+			other.name != "First Person Controller" &&
+			other.name != "Crosshair" &&
+			other.tag != "Bullet")
 		{
-			GameObject.Destroy(this.gameObject);
-			Debug.Log ("hit");
+			//GameObject.Destroy(this.gameObject);
+			Debug.Log ("Hit " + other.name);
 		}
 	}
 }
