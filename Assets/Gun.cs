@@ -6,6 +6,9 @@ public class Gun : MonoBehaviour {
 	
 	GameObject crosshair;
 	GameObject mickey;
+	// maximum distance bullet will travel.
+	public float maxFireDistance = 1000F;
+	
 	// Use this for initialization
 	void Start () {
 		crosshair = GameObject.Find ("Crosshair");
@@ -32,6 +35,10 @@ public class Gun : MonoBehaviour {
 		foreach(GameObject bullet in bullets)
 		{
 			bullet.transform.Translate(new Vector3(0,0,.5f));
+			// If the bullet has traveled very far without hitting anything, destroy it.
+			if (Vector3.Distance(bullet.transform.position, this.transform.position) > maxFireDistance) {
+				GameObject.Destroy(bullet);
+			}
 		}		
 		//this.transform.Translate(new Vector3(Input.GetAxis ("Mouse X"), Input.GetAxis ("Mouse Y"), 0));
 	}
