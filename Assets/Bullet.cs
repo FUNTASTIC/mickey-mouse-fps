@@ -15,7 +15,7 @@ public class Bullet : MonoBehaviour {
 	
 	void OnTriggerEnter (Collider other)
     {
-		if(other.tag != "Gun" && other.tag != "Bullet")
+		if(other.name != "First Person Controller" && other.name != "Crosshair" && other.tag != "Bullet")
 		{
 			GameObject.Destroy(this.gameObject);
 			Debug.Log ("hit");
