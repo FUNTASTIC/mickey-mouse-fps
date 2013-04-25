@@ -20,7 +20,7 @@ public class Bullet : MonoBehaviour {
 			other.name != "Crosshair" &&
 			other.tag != "Bullet")
 		{
-			//GameObject.Destroy(this.gameObject);
+			GameObject.Destroy(this.gameObject);
 			Debug.Log ("Hit " + other.name);
 		}
 	}
