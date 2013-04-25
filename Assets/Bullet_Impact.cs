@@ -16,8 +16,15 @@ public class Bullet_Impact : MonoBehaviour {
 	void OnTriggerEnter(Collider col) {
 		GameObject.Instantiate(Resources.Load("Magic_Hit"), this.transform.position, this.transform.rotation);
 		// if hits enemy and they die, create blood
-		if (col.tag == "Enemy" /* && col.GetComponent<"AI">().isDead()*/) {
+		if (col.tag == "Enemy" /* && col.GetComponent("AI").isDead()*/) {
 			GameObject.Instantiate(Resources.Load("Blood"), this.transform.position, this.transform.rotation);
+			// if it is a large enemy create a large explosion, else create normal explosion
+			if (false/*col.GetComponent("AI").isLarge()*/) {
+				GameObject.Instantiate(Resources.Load ("LargeEnemyDie"), this.transform.position, this.transform.rotation);
+			}
+			else {
+				GameObject.Instantiate(Resources.Load ("NormalEnemyDie"), this.transform.position, this.transform.rotation);
+			}
 		}
 	}
 }

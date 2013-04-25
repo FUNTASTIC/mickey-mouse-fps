@@ -6,6 +6,7 @@ public class Gun : MonoBehaviour {
 	
 	GameObject crosshair;
 	GameObject mickey;
+	GameObject firingSound;
 	// maximum distance bullet will travel.
 	public float maxFireDistance = 1000F;
 	
@@ -14,6 +15,7 @@ public class Gun : MonoBehaviour {
 		crosshair = GameObject.Find ("Crosshair");
 		crosshair.renderer.material.color = Color.red;
 		mickey = GameObject.Find ("Mickey");
+		firingSound = (GameObject)Instantiate (Resources.Load ("Firing_Sound"), transform.position, transform.rotation);
 	}
 	
 	// Update is called once per frame
@@ -27,7 +29,7 @@ public class Gun : MonoBehaviour {
 			Quaternion rotation = new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w);
 			Instantiate (Resources.Load ("Bullet"), position, rotation);
 			//Play sound when firing
-			Instantiate (Resources.Load ("Firing_Sound"), position, rotation);
+			firingSound.audio.Play();
 		}	
 		//set up crosshair
 		crosshair.transform.position = new Vector3(x,y,z);
