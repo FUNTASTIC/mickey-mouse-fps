@@ -41,13 +41,13 @@ public class DisneyGUI : MonoBehaviour {
 		GUI.Box(new Rect(menux,menuy,menuw,menuh), "Menu");
 
 		// Make the first button. If it is pressed, Application.Loadlevel (1) will be executed
-		if(GUI.Button(new Rect(menux+5,menuy+optionh, menuw-10,optionh), "Option 1")) {
+		if(GUI.Button(new Rect(menux+5,menuy+optionh, menuw-10,optionh), "Play")) {
 			
 			gm.SendMessage("startGame");
 		}
 
 		// Make the second button.
-		if(GUI.Button(new Rect(menux+5,menuy+optionh*2,menuw-10,optionh), "Option 2")) {
+		if(GUI.Button(new Rect(menux+5,menuy+optionh*2,menuw-10,optionh), "Instructions")) {
 			
 			go.SendMessage("updateOption", 1);
 		}

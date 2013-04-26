@@ -31,7 +31,7 @@ public class Gun : MonoBehaviour {
 		GameObject[] bullets = GameObject.FindGameObjectsWithTag("Bullet");
 		foreach(GameObject bullet in bullets)
 		{
-			bullet.transform.Translate(new Vector3(0,0,.5f));
+			bullet.transform.Translate(new Vector3(0,0,1f));
 		}		
 		//this.transform.Translate(new Vector3(Input.GetAxis ("Mouse X"), Input.GetAxis ("Mouse Y"), 0));
 	}

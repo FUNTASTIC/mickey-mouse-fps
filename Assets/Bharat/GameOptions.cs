@@ -38,4 +38,5 @@ public class GameOptions : MonoBehaviour {
 	void updateOptionColor(int color) {
 		
 	}
+	
 }
