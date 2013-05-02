@@ -34,6 +34,7 @@ public class FixMeter : MonoBehaviour {
 	}
 	
 	public void GetMyFixOn(int fixAmount) {
+		Debug.Log("FIX MESSAGE RECEIVED");
 		currentFIX += fixAmount;
 		if (currentFIX > MaxFIX)
 			currentFIX = MaxFIX;

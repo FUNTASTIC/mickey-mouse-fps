@@ -25,7 +25,7 @@ public class Bullet : MonoBehaviour {
 			other.name != "First Person Controller" &&
 			other.tag != "Bullet")
 		{
-			Debug.Log ("Hit " + other.name);
+			//Debug.Log ("Hit " + other.name);
 		}
 		
 		if(other.CompareTag("Enemy"))

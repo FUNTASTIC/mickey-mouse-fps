@@ -14,9 +14,11 @@ public class FIX : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter(Collider col) {
-		print ("Im hitting something");
-		if (col.CompareTag("Mickey")) {
-			((FixMeter)col.GetComponent("FixMeter")).GetMyFixOn(1);
+		if (col.CompareTag("Player")) {
+			Debug.Log("Mickey got his fix!");
+			GameObject m = GameObject.Find("Mickey");
+			m.SendMessage("GetMyFixOn", 10); 
+			GameObject.Destroy(this.gameObject);
 		}
 	}
 }
