@@ -12,6 +12,8 @@ public class FixMeter : MonoBehaviour {
 	private Texture progressForeground;
 	private float elapsedTime;
 	
+	private bool lost = false;
+	
 	// Use this for initialization
 	void Start () {
 		location = new Vector2(10F,50F);
@@ -29,7 +31,8 @@ public class FixMeter : MonoBehaviour {
 			elapsedTime = 0;
 		}
 		if (currentFIX <= 0) {
-			print("DEATH!!!");
+			//print("DEATH!!!");
+			lost = true;
 		}
 	}
 	
@@ -46,5 +49,19 @@ public class FixMeter : MonoBehaviour {
 		}
 		string meter = "FIX: " + progressBars;
 		GUI.Label(new Rect(location.x,location.y,size.x,size.y), meter);
+	}
+	
+	void OnGUI() {
+		
+		if(lost) {
+		
+			GUI.Box(new Rect (Screen.width/2 - 250, Screen.height/2, 500, 50), "Game Over! You did not consume enough of your fix in time.");
+			GameObject[] monkeys = GameObject.FindGameObjectsWithTag("Enemy");
+			foreach(GameObject monkey in monkeys)
+			{
+				GameObject.Destroy(monkey);
+			}
+		}
+	
 	}
 }
