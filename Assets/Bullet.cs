@@ -1,3 +1,7 @@
+//Joshua Schwarz (jjs209)
+//Bullet.cs
+//Mickey FPS
+
 using UnityEngine;
 using System.Collections;
 
@@ -12,7 +16,7 @@ public class Bullet : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		//Bullet dies after a short time if it doesn't hit an enemy
 		timePassed += Time.deltaTime;
 		if(timePassed > 2)
 			GameObject.Destroy(this.gameObject);
@@ -21,13 +25,6 @@ public class Bullet : MonoBehaviour {
 	
 	void OnTriggerEnter (Collider other)
     {
-		if(other.name != "Mickey" &&
-			other.name != "First Person Controller" &&
-			other.tag != "Bullet")
-		{
-			//Debug.Log ("Hit " + other.name);
-		}
-		
 		if(other.CompareTag("Enemy"))
 			GameObject.Destroy(this.gameObject);
 	}

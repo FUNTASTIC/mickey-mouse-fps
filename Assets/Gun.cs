@@ -1,3 +1,7 @@
+//Joshua Schwarz (jjs209)
+//Gun.cs
+//Mickey FPS
+
 using UnityEngine;
 using System.Collections;
 
@@ -13,7 +17,7 @@ public class Gun : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		float x = mickey.transform.position.x;
-		float y = mickey.transform.position.y+1.9f;//bullets and crosshair above Mickey's head
+		float y = mickey.transform.position.y+1.9f;//bullets lined up with Mickey's head
 		float z = mickey.transform.position.z;
 		if(Input.GetMouseButtonDown(0))
 		{

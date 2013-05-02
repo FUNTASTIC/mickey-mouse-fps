@@ -2,8 +2,8 @@ using UnityEngine;
 using System.Collections;
 
 public class FixMeter : MonoBehaviour {
-	public float FIXDropRate = 3.0F;
-	public int MaxFIX = 20;
+	public float FIXDropRate = 1.0F;
+	public int MaxFIX = 30;
 	private int currentFIX = 20;
 	private Vector2 location;
 	private Vector2 size;
@@ -34,7 +34,6 @@ public class FixMeter : MonoBehaviour {
 	}
 	
 	public void GetMyFixOn(int fixAmount) {
-		Debug.Log("FIX MESSAGE RECEIVED");
 		currentFIX += fixAmount;
 		if (currentFIX > MaxFIX)
 			currentFIX = MaxFIX;
