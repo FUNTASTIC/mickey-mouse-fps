@@ -21,6 +21,12 @@ public class Gun : MonoBehaviour {
 			Quaternion rotation = new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w);
 			Instantiate (Resources.Load ("Bullet"), position, rotation);
 		}	
+		if(Input.GetMouseButtonDown(1))
+		{
+			Vector3 position = new Vector3(x,y,z);
+			Quaternion rotation = new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w);
+			Instantiate (Resources.Load ("Cannon Ball"), position, rotation);
+		}	
 		
 		GameObject[] bullets = GameObject.FindGameObjectsWithTag("Bullet");
 		foreach(GameObject bullet in bullets)
