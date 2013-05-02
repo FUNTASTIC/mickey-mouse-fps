@@ -18,7 +18,6 @@ public class DisneyGUI : MonoBehaviour {
 	public GameObject gm;
 	
 	void Start () {
-	
 		numoptions = 5;
 		menuw = 100;
 		menuh = 200;

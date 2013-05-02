@@ -19,6 +19,10 @@ public class Enemy : MonoBehaviour {
 	
 	}
 	
+	public int GetHealth() {
+		return health;
+	}
+	
 	void OnTriggerEnter (Collider obj) {
 	
 		print (obj.tag);

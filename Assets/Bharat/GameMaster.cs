@@ -69,6 +69,9 @@ public class GameMaster : MonoBehaviour {
 	}
 	
 	void OnGUI() {
+		GameObject m = GameObject.Find("Mickey");
+		if (m != null)
+			((FixMeter)m.GetComponent("FixMeter")).DrawFIXBar();
 		
 		GUI.Box (new Rect (0,0,100,50), "Score: "+ score);
 		//GUI.Box (new Rect (Screen.width - 100,0,100,50), "Top-right");
