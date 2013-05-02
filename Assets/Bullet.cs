@@ -23,7 +23,6 @@ public class Bullet : MonoBehaviour {
     {
 		if(other.name != "Mickey" &&
 			other.name != "First Person Controller" &&
-			other.name != "Crosshair" &&
 			other.tag != "Bullet")
 		{
 			Debug.Log ("Hit " + other.name);
